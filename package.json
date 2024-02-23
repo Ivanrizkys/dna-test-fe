@@ -1,0 +1,32 @@
+{
+  "name": "dna-test-fe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "prepare": "husky",
+    "format": "prettier --write ."
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "vue": "^3.4.19"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.17",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vue-tsc": "^1.8.27"
+  }
+}
