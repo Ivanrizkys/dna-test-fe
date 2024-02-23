@@ -13,9 +13,9 @@
       <p>June, 28, 2024</p>
     </div>
     <h2 class="text-2xl mt-4">
-      <a href="/post-detail">
+      <router-link to="/post-detail">
         How to design a product that can grow itself 10x in year
-      </a>
+      </router-link>
     </h2>
     <p class="text-white/60 text-base line-clamp-4 mt-4">Auctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolor.</p>
     <div class="flex items-center gap-4 mt-5">
