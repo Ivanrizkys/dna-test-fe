@@ -1,29 +1,35 @@
 <script setup lang="ts">
-// defineProps<{ loaderVariant?: boolean }>()
+import dayjs from "dayjs";
+
+defineProps<{
+  image: string;
+  author: string;
+  publishedAt: string;
+  title: string;
+  description: string;
+  href: string;
+}>();
 </script>
 
 <template>
   <article>
     <div class="w-full aspect-[1.5/1] rounded-xl overflow-hidden group">
-      <img src="https://epictetus.vercel.app/thumbnail-2.png" alt="banner" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+      <img
+        :src="image"
+        :alt="title + ' image'"
+        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      />
     </div>
     <div class="flex items-center gap-1 text-white/60 mt-5">
-      <p>Internet</p>
+      <p class="line-clamp-1">{{ author }}</p>
       <span>.</span>
-      <p>June, 28, 2024</p>
+      <p class="text-nowrap">{{ dayjs(publishedAt).locale("id").format("ddd, DD MMMM hh:mm") }}</p>
     </div>
     <h2 class="text-2xl mt-4">
-      <router-link to="/post-detail">
-        How to design a product that can grow itself 10x in year
-      </router-link>
+      {{ title }}
     </h2>
-    <p class="text-white/60 text-base line-clamp-4 mt-4">Auctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolor.</p>
-    <div class="flex items-center gap-4 mt-5">
-      <img src="https://epictetus.vercel.app/author-2.png" alt="author" class="w-14 h-14 rounded-full object-cover">
-      <div>
-        <h3>Jenny Wilson</h3>
-        <p class="text-white/60 text-sm mt-1">Entrepreneur</p>
-      </div>
-    </div>
+    <p class="text-white/60 text-base line-clamp-4 mt-4">
+      {{ description }}
+    </p>
   </article>
 </template>

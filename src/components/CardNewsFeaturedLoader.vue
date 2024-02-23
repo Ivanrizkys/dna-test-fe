@@ -18,13 +18,6 @@
         <div class="w-full h-4 lg:h-[18px] rounded bg-white/60 animate-pulse"></div>
         <div class="w-1/2 h-4 lg:h-[18px] rounded bg-white/60 animate-pulse"></div>
       </div>
-      <div class="flex items-center gap-4 mt-5">
-        <div class="basis-14 h-14 bg-white/30 animate-pulse rounded-full"></div>
-        <div class="basis-24 grid gap-1">
-          <div class="w-full h-4 lg:h-[18px] rounded bg-white animate-pulse"></div>
-          <div class="w-11/12 h-4 lg:h-[18px] rounded bg-white/60 animate-pulse"></div>
-        </div>
-      </div>
     </div>
   </article>
 </template>

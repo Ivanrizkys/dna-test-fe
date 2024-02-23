@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar.vue";
 
 <template>
   <main class="bg-gradient-to-b from-gray-600 to-gray-900 min-h-dvh text-white">
-    <div class="container mx-auto px-10">
+    <div class="container mx-auto px-5 sm:px-10">
       <Navbar />
       <RouterView />
     </div>
