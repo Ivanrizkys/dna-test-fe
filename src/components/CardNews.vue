@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import dayjs from "dayjs";
+import { toRefs } from "vue";
 
-defineProps<{
+const props = defineProps<{
   image: string;
   author: string;
   publishedAt: string;
@@ -9,6 +10,23 @@ defineProps<{
   description: string;
   href: string;
 }>();
+
+const { href, image, title } = toRefs(props);
+
+const handleClick = () => {
+  const alreadyWatched = JSON.parse(localStorage.getItem("watched") as string)  
+  const watched = [
+    ...alreadyWatched,
+    {
+      href: href.value,
+      image: image.value,
+      title: title.value,
+    },
+  ];
+
+  localStorage.setItem("watched", JSON.stringify(watched));
+  window.open(href.value);
+};
 </script>
 
 <template>
@@ -23,9 +41,11 @@ defineProps<{
     <div class="flex items-center gap-1 text-white/60 mt-5">
       <p class="line-clamp-1">{{ author }}</p>
       <span>.</span>
-      <p class="text-nowrap">{{ dayjs(publishedAt).locale("id").format("ddd, DD MMMM hh:mm") }}</p>
+      <p class="text-nowrap">
+        {{ dayjs(publishedAt).format("ddd, DD MMMM hh:mm") }}
+      </p>
     </div>
-    <h2 class="text-2xl mt-4">
+    <h2 @click="handleClick" class="text-2xl mt-4 cursor-pointer">
       {{ title }}
     </h2>
     <p class="text-white/60 text-base line-clamp-4 mt-4">
